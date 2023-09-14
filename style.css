@@ -1,0 +1,164 @@
+/* Variables */
+:root {
+    --font-primary: Arial, sans-serif;
+    --color-background-light: #f2f2f2;
+    --color-background-dark: #121212;
+    --color-container-light: #fff;
+    --color-container-dark: #1e1e1e;
+    --color-button: #007BFF;
+    --color-text-light: #333;
+    --color-text-dark: #ccc;
+    --color-neon-green: #00ff00;
+}
+
+/* Global Styles */
+body {
+    font-family: var(--font-primary);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--color-background-light); /* Default background color */
+}
+
+body.dark-mode {
+    background-color: var(--color-background-dark); /* Dark mode background color */
+}
+
+/* Dark Mode Toggle Styles */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 2; /* Place it above the container */
+    font-size: 14px;
+    color: var(--color-text-light);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-right: 10px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: background-color 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    content: "";
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: transform 0.4s;
+    border-radius: 50%;
+}
+
+.switch input:checked + .slider {
+    background-color: var(--color-button);
+}
+
+.switch input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Dark Mode Label Styles */
+#modeLabel {
+    margin-left: 10px;
+}
+
+/* Container Styles */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-container-light);
+    color: var(--color-text-light);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+}
+
+.container:hover {
+    box-shadow: 0 0 20px rgb(2, 255, 2);
+    transition: box-shadow 0.3s;
+}
+
+.container.dark-mode {
+    background-color: var(--color-container-dark);
+    color: var(--color-text-dark);
+}
+
+/* Header Styles */
+h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Search Styles */
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 60%;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--color-button);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Weather Styles */
+.weather {
+    margin-top: 20px;
+}
+
+img#weatherIcon {
+    width: 100px;
+    margin: 0 auto;
+}
+
+h2#cityName {
+    font-size: 24px;
+}
+
+p#temperature {
+    font-size: 18px;
+}
+
+p#description {
+    font-size: 16px;
+    margin-top: 10px;
+}
